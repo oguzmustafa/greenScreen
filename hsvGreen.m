@@ -1,5 +1,5 @@
 clear all;
-A1 = imread ('gs2.jpg');
+A1 = imread ('greenScreen.jpg');
 C = A1;
 A2 = rgb2hsv(A1);
 sat=size(A2)(1);
@@ -44,7 +44,7 @@ A1(:,:,3)=Amsk.*A1(:,:,3);
 imwrite(A1,'greenScreenMasked.jpg');
 
 A = imread('greenScreenMasked.jpg');
-B = imread('beach2.jpg');
+B = imread('backGround.jpg');
 
 sat = size(A1)(1);
 sut = size(A1)(2);
@@ -78,4 +78,4 @@ for i = 1:sat
     endif
   endfor
 endfor
-imwrite(A1,'sonGoruntu.jpg');
+imwrite(A1,'result.jpg');
